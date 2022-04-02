@@ -10,7 +10,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   ![image](Images/Screenshot 2-3 filebeat playbook.png) 
   ![image](Screenshot 2-6 metricbeat playbook.png)
   ![image](Screenshot 2-4 After running filebeat playbook.png)
-  ![image](Screenshot 2-8 metricbeat playbook success.png)
+  ![image](elk-stack-project-D-Ellisen / Screenshots / Screenshots / Screenshot 2-8 metricbeat playbook success.png)
 
 This document contains the following details:
 - Description of the Topologu
