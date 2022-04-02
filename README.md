@@ -10,7 +10,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   ![image](Images/Screenshot 2-3 filebeat playbook.png) 
   ![image](Screenshot 2-6 metricbeat playbook.png)
   ![image](Screenshot 2-4 After running filebeat playbook.png)
-  ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/tree/main/Screenshots/Screenshots)
+  ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/Screenshot%202-8%20metricbeat%20playbook%20success%20.png)
 
 This document contains the following details:
 - Description of the Topologu
