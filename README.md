@@ -3,7 +3,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/MEDIUM.jpg)
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/MY_draw.io.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -44,7 +44,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
  you can then view this data using a applications such as Elastisearch or Logstash. 
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -61,7 +61,7 @@ Only the Jump-Box-Provisioner machine can accept connections from the Internet. 
 - 23.81.114.195 -my public IP address- 
 
 Machines within the network can only be accessed by Jump-Box-Provisioner machine.
-- _TODO: Which machine did you allow to access your ELK VM? 
+Which machine did you allow to access your ELK VM? 
 Only the jump-Box-Provisioner VM 
 
 A summary of the access policies in place can be found in the table below.
@@ -81,7 +81,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 to cinfigure elk manually thus drastically reducing the risk of human error. It also makes the process faster and more streamlined. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - The first action of the elk playbook installs docker.io on the ELK-VM 
 - The second action installs python on the ELK-VM
 - The third action increases the virtual memory to the required ammount 
@@ -99,8 +99,8 @@ Web-1: 10.0.0.6 Web-2: 10.0.0.7 Web-3: 10.0.0.8
 We have installed the following Beats on these machines:
 Filebeat and Metricbeat
 
-These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see.
+These Beats allow us to collect the following information from each machine 
+In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see.
 Filebeat collects data about the filesystem and specifies which files have been changed and when a file was changed. This information is viewable
 with elastisearch or logstash. In order to see the output from filebeat you would connect to Kibana and view the logs. Metricbeat shows statistics 
 for every process running on the machine including memory, cpu usage and filesystem, network IO and disk IO statistics. You would view this data in Kibana.
@@ -116,7 +116,7 @@ password "changename" and set up kibana host to "10.1.0.65200"
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/Screenshot%202-6%20DATA%20SUCCESSFULLY%20RECIEVED%20(screenshot%20what%20you%20see%20before%20proceeding).png)
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/Screenshot%202-7%20metricbeat%20success.png)
 
-_TODO: Answer the following questions to fill in the blanks:_
+ Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? filebeat-playbook.yml where do you copy it /etc/ansible/filebeat-playbook.yml
 
 - _Which file do you update to make Ansible run the playbook on a specific machine? -filebeat-config.yml. How do I specify which machine to install the ELK server on versus which to install Filebeat on? All private IP addresses that need to be accessed must be added to the hosts file in order to connect. 4 Addresses were added, the 3 web servers (2 being neccessary with a third for redundency) and the ELK server. Next, you must go to the playbook file, navigate to "hosts" and specify where you want the playbook installed (on ELK, Webservers etc...). We then have to specify the host to the elk server for filebeat so "10.1.0.6" is added to the config to specify the location for installation. 
