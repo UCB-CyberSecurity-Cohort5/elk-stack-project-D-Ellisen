@@ -14,8 +14,8 @@ This document contains the following details:
 - Description of the Topology
 - Access Policies
 - ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
+- Beats in Use
+- Machines Being Monitored
 - How to Use the Ansible Build
 
 
@@ -24,9 +24,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly responsive, in addition to restricting access to the network.
-What aspect of security do load balancers protect? What is the advantage of a jump box?
-
---Load ballancers protect against distributed denial of service attacks (DDoS) by analysing incoming traffic in real time and
+Load ballancers protect against distributed denial of service attacks (DDoS) by analysing incoming traffic in real time and
 determining what server to send that traffic to. This prevents any one server from becoming overloaded with traffic because the
 load balancer can tell which servers are being used and distribute traffic evenly so none of them are strained. Load balancers 
 also have a health probe which checks if a machine is working properly before sending traffic. if the machine is not working properly 
@@ -35,13 +33,7 @@ access your virtual network. It does this in multiple ways. for one, you can set
 therefore for someone to compromise the network, they would have to first compromise the jumpbox. On top of that even if they did 
 compromise the jump box they would have to know the private IPs of each machine to access them. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
-
-     What does Filebeat watch for? Filebeat looks for changes/alterations to files. It then creates a record of when said changes 
- occured so create a detailed list. 
-
-    What does Metricbeat record? Metricbeat records metrics from the opperating system and services/applications running on a server
- you can then view this data using a applications such as Elastisearch or Logstash. 
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic. On the ELK server 2 lightweight shippers were installed, Metricbeat and Filebeat. Filebeat is a lightwight shipper for forwarding and centralizing log data. It is installed as an agent on the server. Filebeat monitors the log files or locations that you specify, collects log events and forwards them to Elastisearch or logstash for indexing. Metricbeat works in a simmilar way but on metrics from the operating system and serveces running on the server. Metricbeat is also a lightweight shipper installed directly on the server. Metricbeat takes the metrics and statisitcs that it collects and shipps them to the output that you specify, such as Elastisearch or Logstash. 
 
 The configuration details of each machine may be found below.
 
@@ -51,6 +43,7 @@ The configuration details of each machine may be found below.
 | Jump Box | Gateway  | 10.0.0.1   | Linux-Ubuntu 18.04|
 | Web-1    | web-serv | 10.0.0.6   | Linux-Ubuntu 18.04|
 | Web-2    | web-serv | 10.0.0.7   | Linux-Ubuntu 18.04|
+| Web-3    | web-serv | 10.0.0.8   | Linux-Ubuntu 18.04|
 | Elk-srv  | Elk-serv | 10.1.0.6   | Linux-Ubuntu 18.04|
 
 ### Access Policies
@@ -70,18 +63,18 @@ A summary of the access policies in place can be found in the table below.
 |----------|---------------------|----------------------|
 | Jump Box | Yes                 | 10.0.0.1             |
 | Web-1    | No                  | 10.0.0.6             |
-| Web-3    | No                  | 10.0.0.7             |
-| Elk-srv  | yes (via5601)       | 10.1.0.6             |
-| Load-bl  | yes (via 80)        | 10.1.0.4             |
+| Web-2    | No                  | 10.0.0.7             |
+| Web-3    | No                  | 10.0.0.8             |
+| Elk-srv  | yes (via-5601)      | 10.1.0.6             |
+| Load-bl  | yes (via-80)        | 10.1.0.4             |
 
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it prevented having
-to cinfigure elk manually thus drastically reducing the risk of human error. It also makes the process faster and more streamlined. 
+to configure elk manually thus drastically reducing the risk of human error. It also makes the process faster and more streamlined. 
 
 The playbook implements the following tasks:
-- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - The first action of the elk playbook installs docker.io on the ELK-VM 
 - The second action installs python on the ELK-VM
 - The third action increases the virtual memory to the required ammount 
@@ -94,7 +87,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines: 
-Web-1: 10.0.0.6 Web-2: 10.0.0.7 Web-3: 10.0.0.8
+Web-1: 10.0.0.6, Web-2: 10.0.0.7 and Web-3: 10.0.0.8 
 
 We have installed the following Beats on these machines:
 Filebeat and Metricbeat
