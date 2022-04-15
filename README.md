@@ -54,8 +54,7 @@ Only the Jump-Box-Provisioner machine can accept connections from the Internet. 
 - 23.81.114.195 -my public IP address- 
 
 Machines within the network can only be accessed by Jump-Box-Provisioner machine.
-Which machine did you allow to access your ELK VM? 
-Only the jump-Box-Provisioner VM 
+That includes all 3 webservers no other machine is allowed to make connections. This offers a high degree of security. The ELK server is accessible via port 5601. 
 
 A summary of the access policies in place can be found in the table below.
 
@@ -71,7 +70,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it prevented having
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because eliminated the need 
 to configure elk manually thus drastically reducing the risk of human error. It also makes the process faster and more streamlined. 
 
 The playbook implements the following tasks:
@@ -92,8 +91,7 @@ Web-1: 10.0.0.6, Web-2: 10.0.0.7 and Web-3: 10.0.0.8
 We have installed the following Beats on these machines:
 Filebeat and Metricbeat
 
-These Beats allow us to collect the following information from each machine 
-In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see.
+These Beats allow us to collect the following information from each machine.
 Filebeat collects data about the filesystem and specifies which files have been changed and when a file was changed. This information is viewable
 with elastisearch or logstash. In order to see the output from filebeat you would connect to Kibana and view the logs. Metricbeat shows statistics 
 for every process running on the machine including memory, cpu usage and filesystem, network IO and disk IO statistics. You would view this data in Kibana.
