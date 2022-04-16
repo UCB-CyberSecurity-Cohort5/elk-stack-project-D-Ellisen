@@ -3,7 +3,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/MY_draw.io.png)
+![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/Copy%20of%20Untitled%20Diagram.drawio.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
