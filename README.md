@@ -107,10 +107,11 @@ password "changename" and set up kibana host to "10.1.0.65200"
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/Screenshot%202-6%20DATA%20SUCCESSFULLY%20RECIEVED%20(screenshot%20what%20you%20see%20before%20proceeding).png)
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/Screenshot%202-7%20metricbeat%20success.png)
 
- Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? filebeat-playbook.yml where do you copy it /etc/ansible/filebeat-playbook.yml
-
-- _Which file do you update to make Ansible run the playbook on a specific machine? -filebeat-config.yml. How do I specify which machine to install the ELK server on versus which to install Filebeat on? All private IP addresses that need to be accessed must be added to the hosts file in order to connect. 4 Addresses were added, the 3 web servers (2 being neccessary with a third for redundency) and the ELK server. Next, you must go to the playbook file, navigate to "hosts" and specify where you want the playbook installed (on ELK, Webservers etc...). We then have to specify the host to the elk server for filebeat so "10.1.0.6" is added to the config to specify the location for installation. 
+ 
+-Ensure filebeat-playbook.yml is located in /etc/ansible/filebeat-playbook.yml
+-Ensure "filebeat-config.yml" is updated with the correct information ie; all private IP adresses that need to be connected to. 4 addresses were added in total, the 3 web servers and the ELK server. 
+-Ensure to specify in the "hosts" section of the playbook where you want the playbook to install. Ie; which machine. 
+-FInally, specify which machine (which host) filebeat and metricbeat are to monitor.
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/FIlebeat%20config.png)
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/hosts-screenshot.png)
 
