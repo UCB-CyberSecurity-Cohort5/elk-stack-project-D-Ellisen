@@ -111,12 +111,7 @@ password "changename" and set up kibana host to "10.1.0.65200"
 -Ensure filebeat-playbook.yml is located in /etc/ansible/filebeat-playbook.yml
 -Ensure "filebeat-config.yml" is updated with the correct information ie; all private IP adresses that need to be connected to. 4 addresses were added in total, the 3 web servers and the ELK server. 
 -Ensure to specify in the "hosts" section of the playbook where you want the playbook to install. Ie; which machine. 
--FInally, specify which machine (which host) filebeat and metricbeat are to monitor.
+-Finally, specify which machine (which host) filebeat and metricbeat are to monitor.
+-Navigate to http://[ELK-VM-Public-IP-Address:5601/app/kibana
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/FIlebeat%20config.png)
 ![image](https://github.com/UCB-CyberSecurity-Cohort5/elk-stack-project-D-Ellisen/blob/main/Screenshots/Screenshots/hosts-screenshot.png)
-
-
-- _Which URL do you navigate to in order to check that the ELK server is running?
-http://[ELK-VM-Public-Ip-Address]:5601/app/kibana NOTE- you must do "HTTP" NOT! "HTTPS" 
-
-
